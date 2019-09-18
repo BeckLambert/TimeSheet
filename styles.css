@@ -1,10 +1,17 @@
-.lead {
-    font-style: bold;
-    font-size: xx-large;
+.jumbotron {
     text-align: center;
-    
+    background-color: grey;
+}
+
+strong{
+    font-size: 30px;
 }
 
 .container {
     max-width: 80%; 
+}
+
+#submit {
+    margin-top: 5px;
+    background-color: grey;
 }
