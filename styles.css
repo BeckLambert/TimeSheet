@@ -2,4 +2,9 @@
     font-style: bold;
     font-size: xx-large;
     text-align: center;
+    
+}
+
+.container {
+    max-width: 80%; 
 }
