@@ -16,6 +16,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <link rel="stylesheet" href="styles.css" type="text/css">
 
     <title>Document</title>
@@ -123,15 +125,31 @@ var firebaseConfig = {
       event.preventDefault();
 
       var emName = $("#name-input").val().trim();
-      var emRole = $("#email-input").val().trim();
-      var emStart = $("#age-input").val().trim();
-      var emRate = $("#comment-input").val().trim();
-    }
+      var emRole = $("#role-input").val().trim();
+      var emStart = $("#start-input").val().trim();
+      var emRate = $("#rate-input").val().trim();
+    },
+
+    database.ref().push({
+        name: name,
+        role: role,
+        start: start,
+        rate: rate,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      }))
+
+      dataRef.ref().on("child_added", function(childSnapshot) {
+        console.log(childSnapshot.val().emName);
+      console.log(childSnapshot.val().emRole);
+      console.log(childSnapshot.val().emStart);
+      console.log(childSnapshot.val().emRate);
+      console.log(childSnapshot.val().comment);
+      console.log(childSnapshot.val().joinDate);
 
 
 
 
-
+      })
     </script>
 </body>
 
