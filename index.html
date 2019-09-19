@@ -131,14 +131,29 @@
             })
         })
 
-        database.ref().on("child_added", function (childSnapshot) {
-            console.log(childSnapshot.val().emName);
-            console.log(childSnapshot.val().emRole);
-            console.log(childSnapshot.val().emStart);
-            console.log(childSnapshot.val().emRate);
-            console.log(childSnapshot.val().comment);
-            console.log(childSnapshot.val().joinDate);
-        })
+      $("#full-member-list").append("<div class='well'><span class='form-group-1'> " +
+        childSnapshot.val().name +
+        " </span><span class='form-group-2'> " + childSnapshot.val().role +
+        " </span><span class='form-group-3'> " + childSnapshot.val().start +
+        " </span><span class='form-group-4'> " + childSnapshot.val().rate +
+        " </span></div>");
+
+         }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
+    dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+      // Change the HTML to reflect
+      $("#name-display").text(snapshot.val().name);
+      $("#email-display").text(snapshot.val().role);
+      $("#age-display").text(snapshot.val().start);
+      $("#comment-display").text(snapshot.val().rate);
+    });
+
+
+
+
+      })
     </script>
 </body>
 
