@@ -8,10 +8,17 @@ strong{
 }
 
 .container {
-    max-width: 80%; 
+    max-width: 90%; 
 }
 
 #submit {
     margin-top: 5px;
     background-color: grey;
+}
+
+#main-container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin-top: 15px;
 }

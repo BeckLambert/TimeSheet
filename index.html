@@ -16,8 +16,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <link rel="stylesheet" href="styles.css" type="text/css">
 
     <title>Document</title>
@@ -26,139 +26,119 @@
 <body>
 
     <div class="container">
-    <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid">
             <h1 class="display-4"></h1>
             <p class="lead"><strong>Comprehensive Directory of Employee Billable Hours.</strong></p>
         </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Employee Name</th>
-                <th scope="col">Role</th>
-                <th scope="col">Start Date</th>
-                <th scope="col">Months Worked</th>
-                <th scope="col">Monthly Rate ($)</th>
-                <th scope="col">Total Billed ($)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Months Worked</th>
+                    <th scope="col">Monthly Rate ($)</th>
+                    <th scope="col">Total Billed ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <form id="full-member-list">
-        <div class="form-group-1">
-            <label for="exampleFormControlInput1">Name</label>
-            <input  id="name-input" type="name" class="form-control" id="exampleFormControlInput1" placeholder="John Smith">
-        </div>
-        <div class="form-group-2">
-            <label for="exampleFormControlSelect1">Roll</label>
-            <input  id="roll-input" type="Roll" class="form-control" id="exampleFormControlInput1" placeholder="web dev">
-        </div>
-        <div class="form-group-3">
-            <label for="exampleFormControlSelect2">Months Worked</label>
-            <input  id="date-input" type="date" class="form-control" id="exampleFormControlInput1" placeholder="dd/mm/year">
-        </div>
-        <div class="form-group-4">
-            <label for="exampleFormControlTextarea1">Monthly Rate</label>
-            <input  id="rate-input" type="number" class="form-control" id="exampleFormControlInput1" placeholder="$1000">
-            <button id="submit" class="btn btn-default" id="add-user" type="submit">Submit</button>
-        </div>
-    </form>
-</div>
-</div>
+        <form id="main-container">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input id="name-input" type="name" class="form-control" id="exampleFormControlInput1"
+                    placeholder="John Smith">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Role</label>
+                <input id="roll-input" type="Roll" class="form-control" id="exampleFormControlInput1"
+                    placeholder="web dev">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Months Worked</label>
+                <input id="date-input" type="date" class="form-control" id="exampleFormControlInput1"
+                    placeholder="dd/mm/year">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Monthly Rate</label>
+                <input id="rate-input" type="number" class="form-control" id="exampleFormControlInput1"
+                    placeholder="$1000">
+                <button id="submit" class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <script>
-var firebaseConfig = {
-    apiKey: "AIzaSyA2xig0wlwXXEK3Hn5AFi93XF3H8yG4U2w",
-    authDomain: "testing-4db48.firebaseapp.com",
-    databaseURL: "https://testing-4db48.firebaseio.com",
-    projectId: "testing-4db48",
-    storageBucket: "",
-    messagingSenderId: "1009514887143",
-    appId: "1:1009514887143:web:6ff4bee8748448e1146f42"
-  };
+        var firebaseConfig = {
+            apiKey: "AIzaSyA2xig0wlwXXEK3Hn5AFi93XF3H8yG4U2w",
+            authDomain: "testing-4db48.firebaseapp.com",
+            databaseURL: "https://testing-4db48.firebaseio.com",
+            projectId: "testing-4db48",
+            storageBucket: "",
+            messagingSenderId: "1009514887143",
+            appId: "1:1009514887143:web:6ff4bee8748448e1146f42"
+        };
 
-  firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
 
-  var database = firebase.database();
+        var database = firebase.database();
 
 
-    $("#add-user").on("click", function(event) {
-      event.preventDefault();
+        $("#add-user").on("click", function (event) {
+            event.preventDefault();
 
-      var emName = $("#name-input").val().trim();
-      var emRole = $("#role-input").val().trim();
-      var emStart = $("#start-input").val().trim();
-      var emRate = $("#rate-input").val().trim();
-      
-      
-      database.ref().push({
-          name: name,
-          role: role,
-          start: start,
-          rate: rate,
-          dateAdded: firebase.database.ServerValue.TIMESTAMP
+            var emName = $("#name-input").val().trim();
+            var emRole = $("#role-input").val().trim();
+            var emStart = $("#start-input").val().trim();
+            var emRate = $("#rate-input").val().trim();
+
+            database.ref().push({
+                name: name,
+                role: role,
+                start: start,
+                rate: rate,
+                dateAdded: firebase.database.ServerValue.TIMESTAMP
+            })
         })
-    })
 
-      database.ref().on("child_added", function(childSnapshot) {
-        console.log(childSnapshot.val().emName);
-      console.log(childSnapshot.val().emRole);
-      console.log(childSnapshot.val().emStart);
-      console.log(childSnapshot.val().emRate);
-      console.log(childSnapshot.val().comment);
-      console.log(childSnapshot.val().joinDate);
-
-      $("#full-member-list").append("<div class='well'><span class='form-group-1'> " +
-        childSnapshot.val().name +
-        " </span><span class='form-group-2'> " + childSnapshot.val().role +
-        " </span><span class='form-group-3'> " + childSnapshot.val().start +
-        " </span><span class='form-group-4'> " + childSnapshot.val().rate +
-        " </span></div>");
-
-         }, function(errorObject) {
-      console.log("Errors handled: " + errorObject.code);
-    });
-
-    dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-      // Change the HTML to reflect
-      $("#name-display").text(snapshot.val().name);
-      $("#email-display").text(snapshot.val().role);
-      $("#age-display").text(snapshot.val().start);
-      $("#comment-display").text(snapshot.val().rate);
-    });
-
-
-
-
-      })
+        database.ref().on("child_added", function (childSnapshot) {
+            console.log(childSnapshot.val().emName);
+            console.log(childSnapshot.val().emRole);
+            console.log(childSnapshot.val().emStart);
+            console.log(childSnapshot.val().emRate);
+            console.log(childSnapshot.val().comment);
+            console.log(childSnapshot.val().joinDate);
+        })
     </script>
 </body>
 
