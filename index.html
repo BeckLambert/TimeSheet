@@ -138,9 +138,9 @@
         " </span><span class='form-group-4'> " + childSnapshot.val().rate +
         " </span></div>");
 
-         }, function(errorObject) {
+          function Errors (errorObject) {
       console.log("Errors handled: " + errorObject.code);
-    });
+    };
 
     dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
       // Change the HTML to reflect
@@ -149,11 +149,6 @@
       $("#age-display").text(snapshot.val().start);
       $("#comment-display").text(snapshot.val().rate);
     });
-
-
-
-
-      })
     </script>
 </body>
 
